@@ -17,7 +17,7 @@ spec:
   strategy:
     blueGreen:
       activeService: rollout-bluegreen-active
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true
       previewService: rollout-bluegreen-preview
   template:
     metadata:
