@@ -1,11 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"argoproj.io/v1alpha1","kind":"Rollout","metadata":{"annotations":{},"name":"rollout-bluegreen","namespace":"test-argo-rollout"},"spec":{"replicas":2,"revisionHistoryLimit":2,"selector":{"matchLabels":{"app":"rollout-bluegreen"}},"strategy":{"blueGreen":{"activeService":"rollout-bluegreen-active","autoPromotionEnabled":false,"previewService":"rollout-bluegreen-preview"}},"template":{"metadata":{"labels":{"app":"rollout-bluegreen"}},"spec":{"containers":[{"image":"argoproj/rollouts-demo:blue","imagePullPolicy":"Always","name":"rollouts-demo","ports":[{"containerPort":8080}]}]}}}}
-    rollout.argoproj.io/revision: "1"
-  generation: 2
   name: rollout-bluegreen
   namespace: test-argo-rollout
 spec:
